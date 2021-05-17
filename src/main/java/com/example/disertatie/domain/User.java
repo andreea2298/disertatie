@@ -1,16 +1,37 @@
 package com.example.disertatie.domain;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User {
-    public Integer cnp;
+
+    @Id
+    @Type(type="objectid")
+    public Integer id;
+
+    public String cnp;
     public String firstname;
     public String lastname;
     public Integer age;
 
-    public Integer getCnp() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCnp() {
         return cnp;
     }
 
-    public void setCnp(Integer cnp) {
+    public void setCnp(String cnp) {
         this.cnp = cnp;
     }
 

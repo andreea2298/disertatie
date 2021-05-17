@@ -15,6 +15,7 @@
 	<description>Project for disertatie</description>
 	<properties>
 		<java.version>16</java.version>
+		<mongodb.version>3.9.1</mongodb.version>
 	</properties>
 	<dependencies>
 <!--		<dependency>-->
@@ -60,6 +61,18 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.hibernate.ogm</groupId>
+			<artifactId>hibernate-ogm-mongodb</artifactId>
+			<version>5.4.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.narayana.jta</groupId>
+			<artifactId>narayana-jta</artifactId>
+			<version>5.11.2.Final</version>
+		</dependency>
+
+
 
 	</dependencies>
 
