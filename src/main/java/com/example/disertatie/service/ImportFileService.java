@@ -13,12 +13,14 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ImportFileService {
 
-    //@Autowired
-    private UserRepository userRepository = new UserRepository();
+    @Autowired
+    private UserRepository userRepository;
 
     public void readFromExcelFile(MultipartFile excelFile) {
         try(InputStream inputStream =  new BufferedInputStream(excelFile.getInputStream())) {
@@ -41,7 +43,7 @@ public class ImportFileService {
                 user.setAge((int)Float.parseFloat(row.getCell(2).toString()));
                 user.setCnp(row.getCell(3).toString());
 
-                userRepository.create(user);
+                userRepository.save(user);
 
 
                 //For each row, iterate through all the columns
@@ -58,7 +60,7 @@ public class ImportFileService {
 //                            break;
 //                    }
 //                }
-                System.out.println();
+              //  System.out.println();
             }
             workbook.close();
         } catch (Exception e) {

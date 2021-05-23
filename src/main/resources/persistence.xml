@@ -1,4 +1,4 @@
-<persistence-unit name="ogm-mongodb" transaction-type="JTA">
+<persistence-unit name="ogm-mongodb" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
     <properties>
         <property name="hibernate.ogm.datastore.provider" value="MONGODB" />

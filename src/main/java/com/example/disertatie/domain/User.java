@@ -1,29 +1,23 @@
 package com.example.disertatie.domain;
+import org.springframework.data.annotation.Id;
 
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
 public class User {
-
     @Id
-    @Type(type="objectid")
-    public Integer id;
+    public String id;
 
     public String cnp;
     public String firstname;
     public String lastname;
     public Integer age;
 
-    public Integer getId() {
+    public User() {
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
